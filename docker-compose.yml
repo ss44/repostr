@@ -1,0 +1,12 @@
+version: "3.7"
+services: 
+  repost: 
+    image: "ruby:3.2.3"
+    working_dir: "/app"
+    environment:
+      GEM_HOME: "/app/vendor/"
+    ports:
+      - "4000:4000"
+    volumes:
+      - ".:/app"
+    command: "bundle exec repost"
